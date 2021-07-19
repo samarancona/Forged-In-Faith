@@ -6,10 +6,10 @@ public class CharacterMouvement : MonoBehaviour
 {
     public CharacterController2D Controller2D; 
     public float Speed = 40f;
-    float HorizontalMove = 0f;
-    bool jump;
-    float JumpTime;
-    float AdditionalJForce;
+    private float HorizontalMove = 0f;
+    private bool jump;
+    private float JumpTime = 0f;
+    [SerializeField] float CalibratedJumpForce = 0f;
     
     Animator m_Animator;
     private void Start()
@@ -19,20 +19,24 @@ public class CharacterMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //inizializzo variabili salto
-        if (Input.GetButtonDown("Jump"))
-        {
-            JumpTime = 0f;
-            Controller2D.m_JumpForce = 300f;
-        }
+        ////inizializzo variabili salto
+        //if (Input.GetButtonDown("Jump"))
+        //{
+            
+        //    Controller2D.m_JumpForce = 600f;
+        //}
         //caricare il salto 
         if (Input.GetButton("Jump"))
         {
             JumpTime += 1f;
-            if(JumpTime == 30f)
+            if(JumpTime == 40f)
             {
-                AdditionalJForce = 200f;
+                CalibratedJumpForce += 400f;
             }
+            //if(JumpTime == 80f)               
+            //{                                                      
+            //    CalibratedJumpForce += 500f;               // solo se si vuole un'altro salto calibrato più potente
+            //}
             
             Debug.Log(JumpTime);
 
@@ -40,10 +44,15 @@ public class CharacterMouvement : MonoBehaviour
         // il salto è dato dalla somma delle due varibili 
         if (Input.GetButtonUp("Jump"))
         {
-            Controller2D.m_JumpForce += AdditionalJForce;
+            Controller2D.m_JumpForce = 600f;    //Reset Variable
+            Controller2D.m_JumpForce += CalibratedJumpForce;
             jump = true;
-            AdditionalJForce = 0;
+            CalibratedJumpForce = 0f;           //Reset Variable 
+            JumpTime = 0f;                      //Reset Variable
+            
+            Debug.Log(Controller2D.m_JumpForce);
         }
+        
 
         HorizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
     }
@@ -69,6 +78,12 @@ public class CharacterMouvement : MonoBehaviour
         {
             m_Animator.SetBool("Run", true);
         }
+        //if (Controller2D.b_DoubleJump && !Controller2D.m_Grounded && Input.GetButton("Jump"))
+        //{
+                                                                                                      // se si vuole un'animazione di capovolta al doppio salto 
+        //    m_Animator.Play("Base Layer.DoubleJumpFlip", 0, 0f);
+        //}
+
         else
         {
             m_Animator.SetBool("Run", false);
