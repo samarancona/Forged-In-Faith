@@ -3,9 +3,12 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	private float FallMultiplayer = 4f;
-	[HideInInspector]public float m_JumpForce = 600f;                          // Amount of force added when the player jumps.
-	[HideInInspector]public bool b_DoubleJump;                          // Boolean for the Double Jump Mechanism.
+	//private float jumpTimeCounter;
+	//public float jumpTime;
+	//private bool isJumping;
+	
+	[SerializeField]public float m_JumpForce = 600f;                          // Amount of force added when the player jumps.
+	[HideInInspector]public bool b_DoubleJump;                         // Boolean for the Double Jump Mechanism.
 	[SerializeField]public float DoubleJumpForce = 300f;        // Amount of force for the double jump.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -16,7 +19,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 	
 
-	const float k_GroundedRadius = 0.9f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = 0.73f; // Radius of the overlap circle to determine if grounded
 	[HideInInspector]public bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
@@ -36,6 +39,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -43,6 +47,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+		
+		
 	}
 
 	private void FixedUpdate()
@@ -64,7 +70,14 @@ public class CharacterController2D : MonoBehaviour
 		}
 		
 	}
-
+	public static float CalculateJumpForce(float gravityStrength, float jumpHeight)
+	{
+		//h = v^2/2g
+		//2gh = v^2
+		//sqrt(2gh) = v
+		return Mathf.Sqrt(2 * gravityStrength * jumpHeight);
+	}
+	
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -128,32 +141,41 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+        
+		/*if (jump)
+		{
+			if (m_Grounded)
+            {
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				Debug.Log(m_JumpForce);
+				b_DoubleJump = true;
+				
+			}
+            // Add a vertical force to the player.
+            else
+            {
+                if (b_DoubleJump)
+                {
+					//m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+					//m_Rigidbody2D.AddForce(new Vector2(0, -(Physics2D.gravity.y * 60)));
+					m_Rigidbody2D.velocity += Vector2.up * (-1 * Physics2D.gravity.y) * 2;
+					b_DoubleJump = false;
+					Debug.Log("doppio salto");
+				}
+            }
+			
+		}*/
+        
+
 		// If the player should jump...
-		if (m_Grounded && jump)
-		{
-			
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			
-			
-			b_DoubleJump = true;
-		}
-		if (b_DoubleJump && !m_Grounded && Input.GetButton("Jump"))
-		{
-			m_Rigidbody2D.AddForce(new Vector2(0f, DoubleJumpForce));
 
-			b_DoubleJump = false;
-			Debug.Log("doppio salto");
-		}
-		if (m_Rigidbody2D.velocity.y < 0)
-		{
-			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplayer - 1) * Time.deltaTime;
-		}
+		//if (b_DoubleJump && Input.GetButtonDown("Jump") && !m_Grounded)
+		//{
+			
+		//}
+		
 	}
-
-
-
+	
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
