@@ -100,7 +100,7 @@ public class CharacterMouvement : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow)|| Input.GetKey(KeyCode.LeftArrow))
         {
             m_Animator.SetBool("Run", true);
-            Debug.Log("Mi sto Cagando a dosso ");
+            
         }
         //if (Controller2D.b_DoubleJump && !Controller2D.m_Grounded && Input.GetButton("Jump"))
         //{
