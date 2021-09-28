@@ -11,9 +11,11 @@ public class CharacterMouvement : MonoBehaviour
     private bool jump;
     [SerializeField] float DoubleJumpForce = 0f;
     private bool b_Doublejump;
-    [SerializeField]public float JumpTime = 0.35f;
-    [SerializeField]public float JumpForce = 0f;
+    [SerializeField] public float JumpTime = 0.35f;
+    [SerializeField] public float JumpForce = 0f;
 
+    [SerializeField] private UI_Inventory uiInventory;
+    private Inventory inventory;
 
     [SerializeField] float FallMultiplayer = 0f;
     private Rigidbody2D s_rigidbody2D;
@@ -29,6 +31,8 @@ public class CharacterMouvement : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
+        inventory = new Inventory();
+        uiInventory.Set_inventory(inventory);
     }
     // Update is called once per frame
     void Update()
@@ -97,21 +101,26 @@ public class CharacterMouvement : MonoBehaviour
 
     private void CheckAnimation()
     {
-        if (Input.GetKey(KeyCode.RightArrow)|| Input.GetKey(KeyCode.LeftArrow))
+        
+        
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
         {
             m_Animator.SetBool("Run", true);
-            
+
         }
+        else
+        {
+            m_Animator.SetBool("Run", false);
+        }
+        
+        
         //if (Controller2D.b_DoubleJump && !Controller2D.m_Grounded && Input.GetButton("Jump"))
         //{
                                                                                                       // se si vuole un'animazione di capovolta al doppio salto 
         //    m_Animator.Play("Base Layer.DoubleJumpFlip", 0, 0f);
         //}
 
-        else
-        {
-            m_Animator.SetBool("Run", false);
-        }
+        
     }
 
     private void JumpingFunction()
@@ -131,7 +140,9 @@ public class CharacterMouvement : MonoBehaviour
         {
             if (b_Doublejump == true)
             {
-                s_rigidbody2D.velocity += Vector2.up * DoubleJumpForce;//(-1 * Physics2D.gravity.y) * 1.5f;
+
+                s_rigidbody2D.velocity = Vector2.zero; // azzero la velocità verticale in modo da avere un salto con il valore non mutato
+                s_rigidbody2D.velocity += Vector2.up * DoubleJumpForce; //(-1 * Physics2D.gravity.y) * 1.5f;
                 b_Doublejump = false;
                 Debug.Log("doppio salto");
             }

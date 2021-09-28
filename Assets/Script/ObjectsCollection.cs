@@ -25,7 +25,7 @@ public class ObjectsCollection : MonoBehaviour
     }
     private void Update()
     {
-        if(entrato== true)
+        if(entrato == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
