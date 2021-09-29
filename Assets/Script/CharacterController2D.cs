@@ -8,7 +8,7 @@ public class CharacterController2D : MonoBehaviour
 	//private bool isJumping;
 	
 	[SerializeField]public float m_JumpForce = 600f;                          // Amount of force added when the player jumps.
-	[HideInInspector]public bool b_DoubleJump;                         // Boolean for the Double Jump Mechanism.
+	                         // Boolean for the Double Jump Mechanism.
 	[SerializeField]public float DoubleJumpForce = 300f;        // Amount of force for the double jump.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement

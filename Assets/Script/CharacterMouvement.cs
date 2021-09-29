@@ -10,7 +10,8 @@ public class CharacterMouvement : MonoBehaviour
     private float HorizontalMove = 0f;
     private bool jump;
     [SerializeField] float DoubleJumpForce = 0f;
-    private bool b_Doublejump;
+    private bool b_Doublejump = false;
+    public bool b_Doublejump_key = false;
     [SerializeField] public float JumpTime = 0.35f;
     [SerializeField] public float JumpForce = 0f;
 
@@ -23,7 +24,7 @@ public class CharacterMouvement : MonoBehaviour
     float CounterJump;
 
 
-
+    
     //[SerializeField] float CalibratedJumpForce = 0f;
 
     Animator m_Animator;
@@ -38,11 +39,7 @@ public class CharacterMouvement : MonoBehaviour
     void Update()
     {
         JumpingFunction();
-        
 
-
-        
-        
 
         // il salto è dato dalla somma delle due varibili 
         /*if (Input.GetButtonUp("Jump"))
@@ -138,7 +135,7 @@ public class CharacterMouvement : MonoBehaviour
 
         if (!Controller2D.m_Grounded && Input.GetButtonDown("Jump"))
         {
-            if (b_Doublejump == true)
+            if (b_Doublejump == true && b_Doublejump_key)
             {
 
                 s_rigidbody2D.velocity = Vector2.zero; // azzero la velocità verticale in modo da avere un salto con il valore non mutato
@@ -156,7 +153,7 @@ public class CharacterMouvement : MonoBehaviour
             {
                 s_rigidbody2D.velocity = Vector2.up * JumpForce;
                 CounterJump -= Time.deltaTime;
-                Debug.Log("sto saltando più in alto ");
+                
             }
             else
             {
