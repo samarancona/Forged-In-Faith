@@ -9,11 +9,22 @@ public class UI_Inventory : MonoBehaviour
     private Transform itemSlotContainer;
     private Transform itemSlotTamplate;
     
+
+    
     private void Awake()
     {
+        
+        StartCoroutine(Wait_instantiating());
+        
+        
+    }
+    IEnumerator Wait_instantiating()
+    {
+        yield return new WaitForSeconds(5f);
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTamplate = itemSlotContainer.transform.Find("itemSlotTamplate");
         Debug.Log(itemSlotTamplate);
+        
     }
     public void Set_inventory(Inventory inventory)
     {
@@ -32,6 +43,7 @@ public class UI_Inventory : MonoBehaviour
         float itemSlotCellSize = 30f;
         foreach (Item item in inventory.GetItemList())
         {
+            Debug.Log("sono entrato nel foreach");
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTamplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
