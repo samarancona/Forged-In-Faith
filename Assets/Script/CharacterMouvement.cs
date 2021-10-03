@@ -5,29 +5,42 @@ using UnityEngine;
 public class CharacterMouvement : MonoBehaviour
 {
     
-    public CharacterController2D Controller2D; 
+                                                //Declaring Variables For Mouvemnt Player
+
     [SerializeField]public float Speed = 40f;
     private float HorizontalMove = 0f;
-    private bool jump;
+    
+    
+                                                //Declaring Variables For Double Jump / Jump
+
     [SerializeField] float DoubleJumpForce = 0f;
     private bool b_Doublejump = false;
     public bool b_Doublejump_key = false;
     [SerializeField] public float JumpTime = 0.35f;
     [SerializeField] public float JumpForce = 0f;
-
-    [SerializeField] private UI_Inventory uiInventory;
-    private Inventory inventory;
-
     [SerializeField] float FallMultiplayer = 0f;
-    private Rigidbody2D s_rigidbody2D;
     private bool IsJumping;
     float CounterJump;
+    //...
+
+
+
+                                                  //Declating Variable Components Player
+    private Rigidbody2D s_rigidbody2D;
+    [SerializeField] private UI_Inventory uiInventory;
+    private Inventory inventory;
+    public CharacterController2D Controller2D; 
+    Animator m_Animator;
+    //...
+
+
+
 
 
     
     //[SerializeField] float CalibratedJumpForce = 0f;
 
-    Animator m_Animator;
+
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -38,8 +51,10 @@ public class CharacterMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
         JumpingFunction();
-
+        
+       
 
         // il salto è dato dalla somma delle due varibili 
         /*if (Input.GetButtonUp("Jump"))
@@ -76,23 +91,24 @@ public class CharacterMouvement : MonoBehaviour
         //    CalibratedJumpForce = 0f;
         //    Controller2D.m_JumpForce = 600f;
         //}
-        
 
+        
     }
     private void FixedUpdate()
     {
+
         HorizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
         CheckAnimation();
         if ((Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
             
-            Controller2D.Move(HorizontalMove/2 * Time.fixedDeltaTime, false, jump);
-            jump = false;
+            Controller2D.Move(HorizontalMove/2 * Time.fixedDeltaTime);
+            
         }
         else 
         {
-            Controller2D.Move(HorizontalMove * Time.fixedDeltaTime, false, jump);
-            jump = false;
+            Controller2D.Move(HorizontalMove * Time.fixedDeltaTime);
+            
         }
     }
 
@@ -185,4 +201,6 @@ public class CharacterMouvement : MonoBehaviour
         }
 
     }
+
+    
 }
