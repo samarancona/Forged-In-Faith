@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ObjectsCollection : MonoBehaviour
 {
-    [SerializeField]GameObject ObjectToPick;
-    [SerializeField]GameObject ActiveButton;
+    public GameObject ObjectToPick;
+    public GameObject ActiveButton;
     private bool entrato;
     private void OnTriggerEnter2D(Collider2D other)
     {

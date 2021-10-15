@@ -27,7 +27,7 @@ public class CharacterMouvement : MonoBehaviour
 
                                                   //Declating Variable Components Player
     private Rigidbody2D s_rigidbody2D;
-    [SerializeField] private UI_Inventory uiInventory;
+    public UI_Inventory uiInventory;
     private Inventory inventory;
     public CharacterController2D Controller2D; 
     Animator m_Animator;
@@ -53,46 +53,6 @@ public class CharacterMouvement : MonoBehaviour
     {
      
         JumpingFunction();
-        
-       
-
-        // il salto è dato dalla somma delle due varibili 
-        /*if (Input.GetButtonUp("Jump"))
-        {
-            Controller2D.m_JumpForce = 600f;    //Reset Variable
-            Controller2D.m_JumpForce += CalibratedJumpForce;
-            jump = true;
-            CalibratedJumpForce = 0f;           //Reset Variable 
-            JumpTime = 0f;                      //Reset Variable
-
-            Debug.Log(Controller2D.m_JumpForce);
-        }*/
-
-
-        //if (Input.GetButton("Jump"))
-        //{
-        //    JumpTime += 1f;
-        //    if (JumpTime == 40f)
-        //    {
-        //        CalibratedJumpForce += 400f;
-        //        Controller2D.m_JumpForce = Controller2D.m_JumpForce + CalibratedJumpForce;
-        //    }
-        //    Debug.Log(JumpTime);
-        //}
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    jump = true;
-
-        //}
-        //if (Input.GetButtonUp("Jump"))
-        //{
-        //    jump = false;
-        //    JumpTime = 0f;
-        //    CalibratedJumpForce = 0f;
-        //    Controller2D.m_JumpForce = 600f;
-        //}
-
-        
     }
     private void FixedUpdate()
     {
@@ -138,7 +98,7 @@ public class CharacterMouvement : MonoBehaviour
 
     private void JumpingFunction()
     {
-        ////inizializzo variabili salto
+                                                                   ////inizializzo variabili salto
         if (Input.GetButtonDown("Jump") && Controller2D.m_Grounded)
         {
 
@@ -146,7 +106,7 @@ public class CharacterMouvement : MonoBehaviour
             CounterJump = JumpTime;
             s_rigidbody2D.velocity = Vector2.up * JumpForce;
             b_Doublejump = true;
-            //Controller2D.m_JumpForce = 600f;
+                                                                 //Controller2D.m_JumpForce = 600f;
         }
 
         if (!Controller2D.m_Grounded && Input.GetButtonDown("Jump"))
@@ -154,8 +114,8 @@ public class CharacterMouvement : MonoBehaviour
             if (b_Doublejump == true && b_Doublejump_key)
             {
 
-                s_rigidbody2D.velocity = Vector2.zero; // azzero la velocità verticale in modo da avere un salto con il valore non mutato
-                s_rigidbody2D.velocity += Vector2.up * DoubleJumpForce; //(-1 * Physics2D.gravity.y) * 1.5f;
+                s_rigidbody2D.velocity = Vector2.zero;                               // azzero la velocità verticale in modo da avere un salto con il valore non mutato
+                s_rigidbody2D.velocity += Vector2.up * DoubleJumpForce;              //(-1 * Physics2D.gravity.y) * 1.5f;
                 b_Doublejump = false;
                 Debug.Log("doppio salto");
             }

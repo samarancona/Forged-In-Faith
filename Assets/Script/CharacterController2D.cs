@@ -5,7 +5,7 @@ public class CharacterController2D : MonoBehaviour
 {
 	                                                     //Declaring Variables For The Wall Jump/Sliding
 	
-	[Header("Wall Jumping Variables: ")]
+	
 	[HideInInspector] public bool WallJumpingKey;
 	public float xWallForce;
 	public float yWallForce;
@@ -21,15 +21,15 @@ public class CharacterController2D : MonoBehaviour
 
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-	[SerializeField] private LayerMask m_WhatIsFront;
-	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
+	public LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+	public LayerMask m_WhatIsFront;                           // A mask determining what is in front to the character
+	public Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 
 	
 
 	const float k_GroundedRadius = 0.73f;                      // Radius of the overlap circle to determine if grounded
-	const float k_FrontCheckRadius = 0.73f;                     // Radius of the overlap circle to determine if there is something in front
+	const float k_FrontCheckRadius = 1f;                     // Radius of the overlap circle to determine if there is something in front
 
 	[HideInInspector]public bool m_Grounded;            // Whether or not the player is grounded.
 
@@ -139,6 +139,13 @@ public class CharacterController2D : MonoBehaviour
         {
 			
 			IsTouchingFront = Physics2D.OverlapCircle(FrontCheck.position, k_FrontCheckRadius, m_WhatIsFront);
+			
+			if (WallJumpingKey)
+			{
+				Debug.Log("controbalzo");
+				m_Rigidbody2D.velocity = new Vector2(xWallForce * -i_input, yWallForce);
+				//WallJumpingKey = false;
+			}
 			if (IsTouchingFront == true && m_Grounded == false && i_input != 0)
 			{
 				
@@ -154,20 +161,12 @@ public class CharacterController2D : MonoBehaviour
 				m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue));
 				
 			}
-			if (Input.GetButtonDown("Jump"))
-			{
-				WallJumpingKey = true;
-			}
+
 			/*if(Input.GetKeyDown(KeyCode.Space))
             {
 				WallJumpingKey = true;
             }*/
-			if (WallJumpingKey)
-			{
-				Debug.Log("controbalzo");
-				m_Rigidbody2D.velocity = new Vector2(xWallForce * -i_input, yWallForce);
-				//WallJumpingKey = false;
-			}
+
 
 		}
         

@@ -12,8 +12,12 @@ public class WallJumpingScript_Activation : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             characterController2D.WallSlidingKey = true;
-            
-                
+            if (Input.GetButtonDown("Jump"))
+            {
+                Debug.Log("salto");
+                characterController2D.WallJumpingKey = true;
+            }
+
         }
 
     }
