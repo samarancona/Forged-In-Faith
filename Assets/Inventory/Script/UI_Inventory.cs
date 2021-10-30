@@ -20,7 +20,7 @@ public class UI_Inventory : MonoBehaviour
     }
     IEnumerator Wait_instantiating()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0f);
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTamplate = itemSlotContainer.transform.Find("itemSlotTamplate");
         Debug.Log(itemSlotTamplate);
@@ -43,6 +43,7 @@ public class UI_Inventory : MonoBehaviour
         float itemSlotCellSize = 30f;
         foreach (Item item in inventory.GetItemList())
         {
+            Debug.Log(item.ItemType);
             Debug.Log("sono entrato nel foreach");
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTamplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);

@@ -4,74 +4,124 @@ using UnityEngine;
 
 public class CharacterMouvement : MonoBehaviour
 {
-    
-                                                //Declaring Variables For Mouvemnt Player
+    [Header("Externals Variables")]
+    public CharacterController2D Controller2D;
+    //public UI_Inventory uiInventory;
+    //private Inventory inventory;
 
-    [SerializeField]public float Speed = 40f;
+
+    [Header("For Mouvement")]
+    [SerializeField] public float Speed = 40f;
     private float HorizontalMove = 0f;
-    
-    
-                                                //Declaring Variables For Double Jump / Jump
 
+    [Header("For Jumping")]
+    [SerializeField] public bool b_Doublejump_key = false;
+    [SerializeField] public bool CalibratedJumping_Key;
     [SerializeField] float DoubleJumpForce = 0f;
-    private bool b_Doublejump = false;
-    public bool b_Doublejump_key = false;
     [SerializeField] public float JumpTime = 0.35f;
     [SerializeField] public float JumpForce = 0f;
     [SerializeField] float FallMultiplayer = 0f;
+    private bool b_Doublejump = false;
     private bool IsJumping;
-    float CounterJump;
+    private float CounterJump;
+    private bool M_grounded;
+    private bool Input_JumpKeyDown = false;
+
+    [Header("For Wall Jumping")]
+    public bool wallJumpingKey = false;
+    public Transform FrontCheck;
+    public float WallSlidingSpeed = 0;
+    public LayerMask wallJumpLayer;
+    public float xWallForce;
+    public float yWallForce;
+    public float WallJumpTime;
+    public float WallJumpDirection = -1f;
+    private bool isToucingFront;
+    const float k_FrontCheckRadius = 0.4f;                     // Radius of the overlap circle to determine if there is something in front
+    bool WallJumping;
+    bool WallSliding;
+
+
+
     //...
 
 
 
-                                                  //Declating Variable Components Player
+    //Declating Variable Components Player
     private Rigidbody2D s_rigidbody2D;
-    public UI_Inventory uiInventory;
-    private Inventory inventory;
-    public CharacterController2D Controller2D; 
     Animator m_Animator;
-    //...
-
-
-
-
-
     
-    //[SerializeField] float CalibratedJumpForce = 0f;
-
+    
+    
 
     private void Start()
     {
+        
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
-        inventory = new Inventory();
-        uiInventory.Set_inventory(inventory);
+        M_grounded = Controller2D.m_Grounded;
+        //inventory = new Inventory();
+        //uiInventory.Set_inventory(inventory);
     }
     // Update is called once per frame
     void Update()
-    {
-     
+    {   
+        OverlappingFunction();
+        SetWallJumpDirection();
+        
+        M_grounded = Controller2D.m_Grounded;
+        HorizontalMove = Input.GetAxisRaw("Horizontal");
+        Input_JumpKeyDown = Input.GetButtonDown("Jump");
+        
         JumpingFunction();
+        WallJumpingFunction();
     }
+    
     private void FixedUpdate()
     {
+        //fixed fixis mouvement for wall jumping
+        if (WallSliding)
+        {
+            //s_rigidbody2D.gravityScale = 0f;
+            s_rigidbody2D.velocity = new Vector2(s_rigidbody2D.velocity.x, Mathf.Clamp(s_rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue));////0f
 
-        HorizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
+        }
+        else if (WallSliding == false)
+        {
+            s_rigidbody2D.gravityScale = 5f;
+        }
+        
+        MakeWallJump(); //forse da fare in cooroutine
+        
+
+        /////////////////////////////////////////
+
         CheckAnimation();
         if ((Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
             
-            Controller2D.Move(HorizontalMove/2 * Time.fixedDeltaTime);
+            Controller2D.Move(HorizontalMove * Speed /2 * Time.fixedDeltaTime);
             
         }
         else 
         {
-            Controller2D.Move(HorizontalMove * Time.fixedDeltaTime);
+            Controller2D.Move(HorizontalMove* Speed * Time.fixedDeltaTime);
             
         }
+        
+
     }
 
+
+
+
+
+
+
+
+
+
+    //funcition that set the animation boolean/key Variables
     private void CheckAnimation()
     {
         
@@ -96,11 +146,23 @@ public class CharacterMouvement : MonoBehaviour
         
     }
 
+
+
+
+
+
+
+
+
+    //Function Called in update for setting Variables (and Phisics DONT DO THIS!!!) for Jumping  ( LATER TO MAKE THE PHISICS IN FIXED UPDATE)
     private void JumpingFunction()
     {
                                                                    ////inizializzo variabili salto
-        if (Input.GetButtonDown("Jump") && Controller2D.m_Grounded)
+        if (Input_JumpKeyDown && M_grounded == true)
         {
+
+            Debug.Log("ho saltato");
+            
 
             IsJumping = true;
             CounterJump = JumpTime;
@@ -108,10 +170,11 @@ public class CharacterMouvement : MonoBehaviour
             b_Doublejump = true;
                                                                  //Controller2D.m_JumpForce = 600f;
         }
-
-        if (!Controller2D.m_Grounded && Input.GetButtonDown("Jump"))
+        //double jump
+        if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true)
         {
-            if (b_Doublejump == true && b_Doublejump_key)
+            
+            if (b_Doublejump == true )
             {
 
                 s_rigidbody2D.velocity = Vector2.zero;                               // azzero la velocità verticale in modo da avere un salto con il valore non mutato
@@ -122,7 +185,7 @@ public class CharacterMouvement : MonoBehaviour
 
         }
         //caricare il salto 
-        if (Input.GetButton("Jump") && IsJumping == true)
+        if (Input.GetButton("Jump") && IsJumping == true && CalibratedJumping_Key == true)
         {
 
             if (CounterJump > 0)
@@ -154,7 +217,6 @@ public class CharacterMouvement : MonoBehaviour
             IsJumping = false;
         }
 
-
         if (s_rigidbody2D.velocity.y < 0)
         {
             s_rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplayer - 1) * Time.deltaTime;
@@ -162,5 +224,102 @@ public class CharacterMouvement : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+    //Function Called in update for setting All booleans Variables for Jumping or Sliding 
+    private void WallJumpingFunction()
+    {
+        //JumpingWall Function
+        
+        if (isToucingFront == true && M_grounded == false)
+        {
+            WallSliding = true;
+            b_Doublejump = false;
+        }
+        else
+        {
+            WallSliding = false;
+
+        }
+        if (Input_JumpKeyDown && WallSliding == true)
+        {
+
+            WallJumping = true;
+            Invoke("SetWallJumpingToFalse", WallJumpTime);
+        }
+
+
+        //JumpingWallFunction end
+    }
+
+
+
+
+
+
+
+    //Function That makes all the overlapping functions
+    void OverlappingFunction()
+    {
+        isToucingFront = Physics2D.OverlapCircle(FrontCheck.position, k_FrontCheckRadius, wallJumpLayer);
+    }
+
+
+
+
+
+
+
+
+    //Funtion that set the WallJumping to false (Called in time obviously)
+    void SetWallJumpingToFalse()
+    {
+        WallJumping = false;
+    }
+
+
+
+
+
+
+    //setting waLL jump direction in base at the Horizontal input
+    void SetWallJumpDirection()
+    {
+        if(HorizontalMove < 0 )
+        {
+            WallJumpDirection = -1;
+        }
+        if(HorizontalMove > 0)
+        {
+            WallJumpDirection = 1;
+        }
+        
+    }
     
+
+
+
+
+    // Function that make the wall Jump(maybe better in cooroutine)
+    void MakeWallJump()
+    {
+        if (WallJumping == true && wallJumpingKey == true)
+        {
+
+            s_rigidbody2D.velocity = new Vector2(xWallForce * -WallJumpDirection, yWallForce);
+            s_rigidbody2D.gravityScale = 5f;
+
+
+        }
+    }
+    private void OnDrawGizmos()
+    {
+       
+        Gizmos.DrawSphere(FrontCheck.position, 0.4f) ;
+        Gizmos.DrawSphere(Controller2D.m_GroundCheck.position, 0.6f);
+    }
 }

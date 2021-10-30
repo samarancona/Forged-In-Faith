@@ -3,33 +3,19 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	                                                     //Declaring Variables For The Wall Jump/Sliding
-	
-	
-	[HideInInspector] public bool WallJumpingKey;
-	public float xWallForce;
-	public float yWallForce;
-	public float wallJumpTime;
-	public float WallSlidingSpeed;
-	private bool IsTouchingFront;
-	public Transform FrontCheck;
-	private bool WallSliding;
-	private float i_input;
-	[HideInInspector]public bool WallSlidingKey = false;
 
 	                                            // Boolean for the Double Jump Mechanism.
 
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	public LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-	public LayerMask m_WhatIsFront;                           // A mask determining what is in front to the character
 	public Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 
 	
 
-	const float k_GroundedRadius = 0.73f;                      // Radius of the overlap circle to determine if grounded
-	const float k_FrontCheckRadius = 1f;                     // Radius of the overlap circle to determine if there is something in front
+	const float k_GroundedRadius = 0.6f;                      // Radius of the overlap circle to determine if grounded
+	
 
 	[HideInInspector]public bool m_Grounded;            // Whether or not the player is grounded.
 
@@ -64,8 +50,6 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		i_input = Input.GetAxisRaw("Horizontal");
-		WallJumpingFunction();
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 		
@@ -133,42 +117,5 @@ public class CharacterController2D : MonoBehaviour
 	// PREMESSA : BISOGNA CHIARIRE DA CHE PARTE FARLO RIMBALZARE AL MOMENTO DEL TASTO JUMP PREMUTO
 	// FUNIONE INCOMPRETA NON 100% FUNZIONANTE.
 	//** IL CONTROBALZO NON SI ATTIVA SEMPRE .... per qualche cazzo di motivo che adesso dopo 31827189 ore di lavoro non ce la faccio più poro dio  
-	private void WallJumpingFunction()
-	{
-        if (WallSlidingKey)
-        {
-			
-			IsTouchingFront = Physics2D.OverlapCircle(FrontCheck.position, k_FrontCheckRadius, m_WhatIsFront);
-			
-			if (WallJumpingKey)
-			{
-				Debug.Log("controbalzo");
-				m_Rigidbody2D.velocity = new Vector2(xWallForce * -i_input, yWallForce);
-				//WallJumpingKey = false;
-			}
-			if (IsTouchingFront == true && m_Grounded == false && i_input != 0)
-			{
-				
-				WallSliding = true;
-			}
-			else
-			{
-			
-				WallSliding = false;
-			}
-			if (WallSliding)
-			{
-				m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue));
-				
-			}
-
-			/*if(Input.GetKeyDown(KeyCode.Space))
-            {
-				WallJumpingKey = true;
-            }*/
-
-
-		}
-        
-	}
+	
 }
