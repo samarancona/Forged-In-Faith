@@ -4,48 +4,77 @@ using UnityEngine;
 
 public class Item_World : MonoBehaviour
 {
-    [Header("Sprite For Key To Unlock")]
-    [SerializeField]public SpriteRenderer SRenderer;
-    [SerializeField]private Sprite[] Sprites; 
-    public CharacterMouvement characterMouvement;
-    public bool DoppioSalto , Scaling , SaltoCalibrato ;
-    
 
 
-    private void Start()
+    [Header("ItemToPickUp")]
+    Item_Assets item_Assets;
+    private SpriteRenderer SRenderer;
+    private Item item;
+    public bool HealthPostion = false, coin= false, medkit= false;
+
+    private void Awake()
     {
-        if(DoppioSalto == true)
+        item_Assets = GameObject.FindWithTag("AssetsGameObject").GetComponent<Item_Assets>();
+        SRenderer = GetComponent<SpriteRenderer>();
+        Item_World item_World = transform.GetComponent<Item_World>();
+        
+        if (HealthPostion == true)
         {
-            SRenderer.sprite = Sprites[0];
-        }
-        if(Scaling == true)
-        {
-            SRenderer.sprite = Sprites[1];
-        }
-        if (SaltoCalibrato == true)
-        {
-            SRenderer.sprite = Sprites[2];
-        }
+            ///// LATER... dovra fare qualcosa 
+            ///
 
+
+            //imposto tipo Item
+            this.item = new Item { itemType = Item.Itemtype.HealthPosion, Amount = 1 };
+            Debug.Log(item.itemType);
+            SRenderer.sprite = item_Assets.HealthPosionSprite; 
+           
+            //item.GetSprite();
+            //item_World.SetItem(new Item { itemType = Item.Itemtype.HealthPosion , Amount = 1});
+
+
+            //imposto sprite
+            //SRenderer.sprite = item.GetSprite();          //Item_Assets.Instance.HealthPosionSprite;
+        }
+        if (coin == true)
+        {
+
+            //imposto tipo Item
+            this.item = new Item { itemType = Item.Itemtype.coin, Amount = 1 };
+            Debug.Log(item.itemType);
+            SRenderer.sprite = item_Assets.CoinSprite;
+            //item.GetSprite();
+            //item_World.SetItem(new Item { itemType = Item.Itemtype.coin, Amount = 1 });
+
+
+            //SRenderer.sprite = item.GetSprite();          //Item_Assets.Instance.CoinSprite;
+        }
+        if (medkit == true)
+        {
+
+            //imposto tipo Item
+            this.item = new Item { itemType = Item.Itemtype.medkit, Amount = 1 };
+            Debug.Log(item.itemType);
+            SRenderer.sprite = item_Assets.Medkit;
+            //item.GetSprite();
+            //item_World.SetItem(new Item { itemType = Item.Itemtype.medkit, Amount = 1 });
+
+            //SRenderer.sprite = item.GetSprite();          //Item_Assets.Instance.Medkit;
+        }
 
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public void SetItem(Item item)
     {
-        if (DoppioSalto == true && other.CompareTag("Player"))
-        {
-            characterMouvement.b_Doublejump_key = true;
-            Destroy(gameObject, 1f);
-        }
-        if (Scaling == true && other.CompareTag("Player"))
-        {
-            characterMouvement.wallJumpingKey = true;
-            Destroy(gameObject, 1f);
-        }
-        if (SaltoCalibrato == true && other.CompareTag("Player"))
-        {
-            characterMouvement.CalibratedJumping_Key = true;
-            Destroy(gameObject, 1f);
-        }
+        this.item = item;
+        Debug.Log(item.itemType);
+        SRenderer.sprite = item.GetSprite();
+    }
+    public Item GetItem()
+    {
+        return item;
+    }
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

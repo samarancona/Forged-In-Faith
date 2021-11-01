@@ -6,8 +6,8 @@ public class CharacterMouvement : MonoBehaviour
 {
     [Header("Externals Variables")]
     public CharacterController2D Controller2D;
-    //public UI_Inventory uiInventory;
-    //private Inventory inventory;
+    public UI_Inventory uiInventory;
+    private Inventory inventory;
 
 
     [Header("For Mouvement")]
@@ -60,8 +60,27 @@ public class CharacterMouvement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
         M_grounded = Controller2D.m_Grounded;
-        //inventory = new Inventory();
-        //uiInventory.Set_inventory(inventory);
+        inventory = new Inventory();
+        uiInventory.Set_inventory(inventory);
+    }
+
+
+
+
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Item_World item_World = collision.GetComponent<Item_World>();
+        if(item_World != null)
+        {
+            // toucing Item
+            inventory.AddItem(item_World.GetItem());
+            Debug.Log("preso!!!!!!!");
+            item_World.DestroySelf();
+        }
     }
     // Update is called once per frame
     void Update()

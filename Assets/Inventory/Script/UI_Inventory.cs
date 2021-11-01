@@ -13,47 +13,63 @@ public class UI_Inventory : MonoBehaviour
     
     private void Awake()
     {
-        
-        StartCoroutine(Wait_instantiating());
-        
-        
+
+        //StartCoroutine(Wait_instantiating());
+        itemSlotContainer = transform.Find("itemSlotContainer");
+        itemSlotTamplate = itemSlotContainer.GetChild(0).transform;      //.Find("itemSlotTamplate");
+        //Debug.Log(itemSlotTamplate.name);
+
     }
-    IEnumerator Wait_instantiating()
+    /*IEnumerator Wait_instantiating()
     {
         yield return new WaitForSeconds(0f);
-        itemSlotContainer = transform.Find("itemSlotContainer");
-        itemSlotTamplate = itemSlotContainer.transform.Find("itemSlotTamplate");
-        Debug.Log(itemSlotTamplate);
         
-    }
+        
+    }*/
     public void Set_inventory(Inventory inventory)
     {
         this.inventory = inventory;
 
+        
+        inventory.OnItemListChanged += Inventory_OnItemListChanged;
         RefreshInventoriesItem();
         
     }
+
+    private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
+    {
+        RefreshInventoriesItem();
+    }
+
+    
 
 
 
     private void RefreshInventoriesItem()
     {
+        foreach (Transform child in itemSlotContainer)
+        {
+            if (child == itemSlotTamplate) continue;
+            Destroy(child.gameObject);
+        }
         int x = 0;
         int y = 0;
-        float itemSlotCellSize = 30f;
+        float itemSlotCellSize = 200f;
         foreach (Item item in inventory.GetItemList())
         {
-            Debug.Log(item.ItemType);
-            Debug.Log("sono entrato nel foreach");
+            
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTamplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+            Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
+            Debug.Log(item.itemType);
+            image.sprite = item.GetSprite();
             
             x++;
             if (x > 4)
             {
                 x = 0;
-                y++;
+                y--;
             }
         }
     }
