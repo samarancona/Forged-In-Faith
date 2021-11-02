@@ -14,6 +14,7 @@ public class NotCollectableObjects_World : MonoBehaviour
 
     private void Start()
     {
+        
         if(DoppioSalto == true)
         {
             SRenderer.sprite = Sprites[0];

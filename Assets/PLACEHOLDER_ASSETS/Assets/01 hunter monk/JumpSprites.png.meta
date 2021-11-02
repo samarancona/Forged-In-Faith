@@ -1,157 +1,157 @@
 fileFormatVersion: 2
-guid: 0f7117dba6dd4e04ca22ef5682bef343
+guid: 95ecea1ba1649d34e93dd72546dce748
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8377721215197731286
-    second: 1 hunter_monk_56x80px_0
+      213: 564305832982721027
+    second: JumpSprites_0
   - first:
-      213: -2758093939375785367
-    second: 1 hunter_monk_56x80px_1
+      213: 5615826299230964629
+    second: JumpSprites_1
   - first:
-      213: -182682002781363575
-    second: 1 hunter_monk_56x80px_2
+      213: -1721081594026707783
+    second: JumpSprites_2
   - first:
-      213: -6220936317175958981
-    second: 1 hunter_monk_56x80px_3
+      213: 4053780654874054923
+    second: JumpSprites_3
   - first:
-      213: -4232488382093629841
-    second: 1 hunter_monk_56x80px_4
+      213: -6460560563747644034
+    second: JumpSprites_4
   - first:
-      213: 7616145838659341318
-    second: 1 hunter_monk_56x80px_5
+      213: 5901447820379886781
+    second: JumpSprites_5
   - first:
-      213: -6740470164443903833
-    second: 1 hunter_monk_56x80px_6
+      213: 2767997159545046402
+    second: JumpSprites_6
   - first:
-      213: -4530458930162725940
-    second: 1 hunter_monk_56x80px_7
+      213: 4241015274116151868
+    second: JumpSprites_7
   - first:
-      213: 3451399797985752608
-    second: 1 hunter_monk_56x80px_8
+      213: -1273108294584950620
+    second: JumpSprites_8
   - first:
-      213: 6471735011379208400
-    second: 1 hunter_monk_56x80px_9
+      213: 5215773757014789758
+    second: JumpSprites_9
   - first:
-      213: -4028064386425908812
-    second: 1 hunter_monk_56x80px_10
+      213: 5148516331889065210
+    second: JumpSprites_10
   - first:
-      213: -1422538640290871080
-    second: 1 hunter_monk_56x80px_11
+      213: 1055696384259191607
+    second: JumpSprites_11
   - first:
-      213: 169205003298763823
-    second: 1 hunter_monk_56x80px_12
+      213: 3725979152141471921
+    second: JumpSprites_12
   - first:
-      213: 3653889583099515584
-    second: 1 hunter_monk_56x80px_13
+      213: -6310042788258674042
+    second: JumpSprites_13
   - first:
-      213: -5929935292058195576
-    second: 1 hunter_monk_56x80px_14
+      213: -527492304859733257
+    second: JumpSprites_14
   - first:
-      213: -3521423622608620917
-    second: 1 hunter_monk_56x80px_15
+      213: -249291771132304694
+    second: JumpSprites_15
   - first:
-      213: -8938198285823400793
-    second: 1 hunter_monk_56x80px_16
+      213: 9121629750839248371
+    second: JumpSprites_16
   - first:
-      213: -240962716305221667
-    second: 1 hunter_monk_56x80px_17
+      213: 8427575084676686664
+    second: JumpSprites_17
   - first:
-      213: 1280881187101516129
-    second: 1 hunter_monk_56x80px_18
+      213: 8716331028788662826
+    second: JumpSprites_18
   - first:
-      213: 6721207676962580654
-    second: 1 hunter_monk_56x80px_19
+      213: 6031791425188298894
+    second: JumpSprites_19
   - first:
-      213: -549774047597467730
-    second: 1 hunter_monk_56x80px_20
+      213: -3720522167133661507
+    second: JumpSprites_20
   - first:
-      213: -6279986326047668498
-    second: 1 hunter_monk_56x80px_21
+      213: 2313966011147780510
+    second: JumpSprites_21
   - first:
-      213: -2165245527293225273
-    second: 1 hunter_monk_56x80px_22
+      213: 6377265018562761728
+    second: JumpSprites_22
   - first:
-      213: -502274334052554913
-    second: 1 hunter_monk_56x80px_23
+      213: 3512330558891246964
+    second: JumpSprites_23
   - first:
-      213: 2119070904472170840
-    second: 1 hunter_monk_56x80px_24
+      213: -4250129393307226698
+    second: JumpSprites_24
   - first:
-      213: -8574883870053075086
-    second: 1 hunter_monk_56x80px_25
+      213: 5852152310068101102
+    second: JumpSprites_25
   - first:
-      213: 7760766162071169919
-    second: 1 hunter_monk_56x80px_26
+      213: 8808213362253678417
+    second: JumpSprites_26
   - first:
-      213: 5021743985312996921
-    second: 1 hunter_monk_56x80px_27
+      213: 8275202856743819863
+    second: JumpSprites_27
   - first:
-      213: 8154893680981078924
-    second: 1 hunter_monk_56x80px_28
+      213: 2975561300726766272
+    second: JumpSprites_28
   - first:
-      213: 6117369225507875651
-    second: 1 hunter_monk_56x80px_29
+      213: 4953748835241961547
+    second: JumpSprites_29
   - first:
-      213: -2353571368094723817
-    second: 1 hunter_monk_56x80px_30
+      213: -84041027450544484
+    second: JumpSprites_30
   - first:
-      213: -7515441589326937375
-    second: 1 hunter_monk_56x80px_31
+      213: -6156836397536171001
+    second: JumpSprites_31
   - first:
-      213: 7136098756444863541
-    second: 1 hunter_monk_56x80px_32
+      213: 855985773273334155
+    second: JumpSprites_32
   - first:
-      213: 4017059503466382025
-    second: 1 hunter_monk_56x80px_33
+      213: -749372284809443500
+    second: JumpSprites_33
   - first:
-      213: 3449208224301331538
-    second: 1 hunter_monk_56x80px_34
+      213: 3718763775729728583
+    second: JumpSprites_34
   - first:
-      213: -8219645195311303745
-    second: 1 hunter_monk_56x80px_35
+      213: -4812708365569797417
+    second: JumpSprites_35
   - first:
-      213: 2322548947218772804
-    second: 1 hunter_monk_56x80px_36
+      213: 2371861352524195377
+    second: JumpSprites_36
   - first:
-      213: -4242061080389038954
-    second: 1 hunter_monk_56x80px_37
+      213: 6113303163587283402
+    second: JumpSprites_37
   - first:
-      213: -1407051227348588396
-    second: 1 hunter_monk_56x80px_38
+      213: -6489970319761647177
+    second: JumpSprites_38
   - first:
-      213: -1839097323457922906
-    second: 1 hunter_monk_56x80px_39
+      213: 7552545636620186939
+    second: JumpSprites_39
   - first:
-      213: -6431077841087240481
-    second: 1 hunter_monk_56x80px_40
+      213: -2652930174350382890
+    second: JumpSprites_40
   - first:
-      213: -8466993987627356008
-    second: 1 hunter_monk_56x80px_41
+      213: 2767167366870580692
+    second: JumpSprites_41
   - first:
-      213: 3026133711183152125
-    second: 1 hunter_monk_56x80px_42
+      213: 8401412622915772539
+    second: JumpSprites_42
   - first:
-      213: -8564855893744488532
-    second: 1 hunter_monk_56x80px_43
+      213: -8269904229954456564
+    second: JumpSprites_43
   - first:
-      213: 4630845736950692307
-    second: 1 hunter_monk_56x80px_44
+      213: -6388425352517993093
+    second: JumpSprites_44
   - first:
-      213: 6451982370314077731
-    second: 1 hunter_monk_56x80px_45
+      213: 3330292501678120028
+    second: JumpSprites_45
   - first:
-      213: 7925902091580104958
-    second: 1 hunter_monk_56x80px_46
+      213: 1510342642903810939
+    second: JumpSprites_46
   - first:
-      213: 2682343162417231825
-    second: 1 hunter_monk_56x80px_47
+      213: 5083187969013451008
+    second: JumpSprites_47
   - first:
-      213: 3360696395336745591
-    second: 1 hunter_monk_56x80px_48
+      213: 3122523484932408302
+    second: JumpSprites_48
   - first:
-      213: 5872917970710189170
-    second: 1 hunter_monk_56x80px_49
+      213: -8685046985752215557
+    second: JumpSprites_49
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -211,7 +211,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -224,7 +224,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -236,1056 +236,1056 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 435
-        width: 34
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d95d13ee05a34470800000000000000
-      internalID: 8377721215197731286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 435
-        width: 34
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96a3956dc2849b9d0800000000000000
-      internalID: -2758093939375785367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_2
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 435
-        width: 34
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9822c55bfabf67df0800000000000000
-      internalID: -182682002781363575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_3
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 435
-        width: 35
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b327664216bcaa9a0800000000000000
-      internalID: -6220936317175958981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_4
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 435
-        width: 37
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f66675dbd3e2345c0800000000000000
-      internalID: -4232488382093629841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_5
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 435
-        width: 40
-        height: 37
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60c0cd6c94cf1b960800000000000000
-      internalID: 7616145838659341318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_6
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 435
-        width: 31
-        height: 47
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a8c335191a0572a0800000000000000
-      internalID: -6740470164443903833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_7
-      rect:
-        serializedVersion: 2
-        x: 405
-        y: 439
-        width: 32
-        height: 53
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccb872e3b939021c0800000000000000
-      internalID: -4530458930162725940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_8
-      rect:
-        serializedVersion: 2
-        x: 459
-        y: 446
-        width: 39
-        height: 46
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 026bbc874d5d5ef20800000000000000
-      internalID: 3451399797985752608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_9
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 367
-        width: 42
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d067b144b830d950800000000000000
-      internalID: 6471735011379208400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_10
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 356
-        width: 42
-        height: 47
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b19eaa38c07918c0800000000000000
-      internalID: -4028064386425908812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_11
-      rect:
-        serializedVersion: 2
-        x: 116
-        y: 355
-        width: 45
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d80232c4a0224ce0800000000000000
-      internalID: -1422538640290871080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_12
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 355
-        width: 43
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2477d3dd03295200800000000000000
-      internalID: 169205003298763823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_13
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 354
-        width: 42
-        height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c29529773935b230800000000000000
-      internalID: 3653889583099515584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_14
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 356
-        width: 45
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 889a1df1543a4bda0800000000000000
-      internalID: -5929935292058195576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_15
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 355
-        width: 33
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b827ebe5fd3612fc0800000000000000
-      internalID: -3521423622608620917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_16
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 355
-        width: 32
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a4ad71040425f380800000000000000
-      internalID: -8938198285823400793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_17
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 355
-        width: 39
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd7938aafade7acf0800000000000000
-      internalID: -240962716305221667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_18
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 316
-        width: 12
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 161aaac37aa96c110800000000000000
-      internalID: 1280881187101516129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_19
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 275
-        width: 35
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea8abfe85c6864d50800000000000000
-      internalID: 6721207676962580654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_20
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 275
-        width: 42
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea76932aa6fce58f0800000000000000
-      internalID: -549774047597467730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_21
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 275
-        width: 37
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee64e9195b109d8a0800000000000000
-      internalID: -6279986326047668498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_22
-      rect:
-        serializedVersion: 2
-        x: 122
-        y: 275
-        width: 31
-        height: 35
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c61f263aa083f1e0800000000000000
-      internalID: -2165245527293225273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_23
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 275
-        width: 31
-        height: 35
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f57600387209709f0800000000000000
-      internalID: -502274334052554913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_24
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 275
-        width: 37
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 851fde2a2c3786d10800000000000000
-      internalID: 2119070904472170840
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_25
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 275
-        width: 33
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27772474d84eff880800000000000000
-      internalID: -8574883870053075086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_26
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 298
-        width: 7
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7baf13c4b7c3bb60800000000000000
-      internalID: 7760766162071169919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_27
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 275
-        width: 34
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93e198d5c81d0b540800000000000000
-      internalID: 5021743985312996921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_28
-      rect:
-        serializedVersion: 2
-        x: 454
-        y: 275
-        width: 35
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8374fba8900c2170800000000000000
-      internalID: 8154893680981078924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_29
+      name: JumpSprites_0
       rect:
         serializedVersion: 2
         x: 6
-        y: 195
+        y: 400
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302bd9f4a21d4d700800000000000000
+      internalID: 564305832982721027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 400
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b45f5e34c6fed40800000000000000
+      internalID: 5615826299230964629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 400
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4339ea86d7d18e0800000000000000
+      internalID: -1721081594026707783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 400
         width: 35
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34bad4e36e245e450800000000000000
-      internalID: 6117369225507875651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_30
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 195
-        width: 36
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7111f2b7f4f665fd0800000000000000
-      internalID: -2353571368094723817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_31
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 212
-        width: 6
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e288f961b9c3b790800000000000000
-      internalID: -7515441589326937375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_32
-      rect:
-        serializedVersion: 2
-        x: 122
-        y: 195
-        width: 31
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53cb004a204880360800000000000000
-      internalID: 7136098756444863541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_33
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 195
-        width: 43
         height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c288b9c5567fb730800000000000000
-      internalID: 4017059503466382025
+      spriteID: b015e1b170ce14830800000000000000
+      internalID: 4053780654874054923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_34
+      name: JumpSprites_4
       rect:
         serializedVersion: 2
-        x: 236
-        y: 195
-        width: 39
+        x: 227
+        y: 400
+        width: 37
         height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25436d5fa9c0edf20800000000000000
-      internalID: 3449208224301331538
+      spriteID: e7d9ce3956a7756a0800000000000000
+      internalID: -6460560563747644034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_35
+      name: JumpSprites_5
       rect:
         serializedVersion: 2
-        x: 290
-        y: 195
-        width: 35
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 280
+        y: 400
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb339b19e34fded80800000000000000
-      internalID: -8219645195311303745
+      spriteID: db41f32868726e150800000000000000
+      internalID: 5901447820379886781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_36
+      name: JumpSprites_6
       rect:
         serializedVersion: 2
-        x: 346
-        y: 195
+        x: 345
+        y: 390
         width: 31
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 443be6c46f95b3020800000000000000
-      internalID: 2322548947218772804
+      spriteID: 28509f940c6e96620800000000000000
+      internalID: 2767997159545046402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_37
+      name: JumpSprites_7
       rect:
         serializedVersion: 2
         x: 399
-        y: 195
-        width: 38
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 384
+        width: 33
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69cc6eb3ceb2125c0800000000000000
-      internalID: -4242061080389038954
+      spriteID: c3af2b40cec1bda30800000000000000
+      internalID: 4241015274116151868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_38
+      name: JumpSprites_8
       rect:
         serializedVersion: 2
-        x: 459
-        y: 195
-        width: 31
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 448
+        y: 391
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4982c151d56297ce0800000000000000
-      internalID: -1407051227348588396
+      spriteID: 4a029a450c2055ee0800000000000000
+      internalID: -1273108294584950620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_39
+      name: JumpSprites_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 319
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ecbaff896226840800000000000000
+      internalID: 5215773757014789758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_10
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 313
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc7b8a6354337740800000000000000
+      internalID: 5148516331889065210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 320
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733fe66a44696ae00800000000000000
+      internalID: 1055696384259191607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 320
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b057eb3c4655b330800000000000000
+      internalID: 3725979152141471921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_13
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 319
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a835024893e68a0800000000000000
+      internalID: -6310042788258674042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_14
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 321
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f265132b88fda8f0800000000000000
+      internalID: -527492304859733257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 320
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac22b3874765a8cf0800000000000000
+      internalID: -249291771132304694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_16
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 320
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5886f0ee9869e70800000000000000
+      internalID: 9121629750839248371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_17
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 320
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843261863e2c4f470800000000000000
+      internalID: 8427575084676686664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 281
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22d9abb3e0a6f870800000000000000
+      internalID: 8716331028788662826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_19
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 240
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e808899e75a35b350800000000000000
+      internalID: 6031791425188298894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_20
       rect:
         serializedVersion: 2
         x: 6
-        y: 115
+        y: 240
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db618091dcc0e5cc0800000000000000
+      internalID: -3720522167133661507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_21
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 240
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e918ac4c3dbdc1020800000000000000
+      internalID: 2313966011147780510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_22
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 240
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00455f50fb8908850800000000000000
+      internalID: 6377265018562761728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_23
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 240
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4754670c80e4eb030800000000000000
+      internalID: 3512330558891246964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_24
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 240
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bde97eb5d18405c0800000000000000
+      internalID: -4250129393307226698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_25
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 240
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef371d1585073150800000000000000
+      internalID: 5852152310068101102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_26
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 263
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157caf2926f0d3a70800000000000000
+      internalID: 8808213362253678417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_27
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 240
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a5380872d67d270800000000000000
+      internalID: 8275202856743819863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_28
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cad731ec315b4920800000000000000
+      internalID: 2975561300726766272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b482a1fc1504fb440800000000000000
+      internalID: 4953748835241961547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_30
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 160
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e504c712d65def0800000000000000
+      internalID: -84041027450544484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_31
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 177
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c29a0bae58e8aa0800000000000000
+      internalID: -6156836397536171001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_32
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 160
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81cebc868211eb00800000000000000
+      internalID: 855985773273334155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_33
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 160
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457096790e1b995f0800000000000000
+      internalID: -749372284809443500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_34
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 160
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74cf5ff73f3bb9330800000000000000
+      internalID: 3718763775729728583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_35
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 160
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d259a68d33d53db0800000000000000
+      internalID: -4812708365569797417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_36
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 160
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136aead555b8ae020800000000000000
+      internalID: 2371861352524195377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_37
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 160
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac944ed66d0d6d450800000000000000
+      internalID: 6113303163587283402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_38
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 160
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b957c7216efee5a0800000000000000
+      internalID: -6489970319761647177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpSprites_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
         width: 39
         height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a83bef6ab63a76e0800000000000000
-      internalID: -1839097323457922906
+      spriteID: b353caccd3800d860800000000000000
+      internalID: 7552545636620186939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_40
+      name: JumpSprites_40
       rect:
         serializedVersion: 2
-        x: 64
-        y: 115
+        x: 58
+        y: 80
         width: 29
         height: 49
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd6eb1fd6c830c6a0800000000000000
-      internalID: -6431077841087240481
+      spriteID: 6d82eefef06ee2bd0800000000000000
+      internalID: -2652930174350382890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_41
+      name: JumpSprites_41
       rect:
         serializedVersion: 2
-        x: 124
-        y: 115
+        x: 118
+        y: 80
         width: 21
         height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8907a1c04d13f7a80800000000000000
-      internalID: -8466993987627356008
+      spriteID: 4ddbf502f04f66620800000000000000
+      internalID: 2767167366870580692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_42
+      name: JumpSprites_42
       rect:
         serializedVersion: 2
-        x: 184
-        y: 116
+        x: 178
+        y: 81
         width: 22
         height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df308e1c39cfef920800000000000000
-      internalID: 3026133711183152125
+      spriteID: b70a0689440d79470800000000000000
+      internalID: 8401412622915772539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_43
+      name: JumpSprites_43
       rect:
         serializedVersion: 2
-        x: 246
-        y: 115
+        x: 240
+        y: 80
         width: 32
         height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cafe2f471f4832980800000000000000
-      internalID: -8564855893744488532
+      spriteID: c04701f2be56b3d80800000000000000
+      internalID: -8269904229954456564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_44
+      name: JumpSprites_44
       rect:
         serializedVersion: 2
-        x: 302
-        y: 115
+        x: 296
+        y: 80
         width: 32
         height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d9f39899a1144040800000000000000
-      internalID: 4630845736950692307
+      spriteID: b7db01d3df0c757a0800000000000000
+      internalID: -6388425352517993093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_45
+      name: JumpSprites_45
       rect:
         serializedVersion: 2
-        x: 358
-        y: 115
+        x: 352
+        y: 80
         width: 32
         height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32647af18cb0a8950800000000000000
-      internalID: 6451982370314077731
+      spriteID: c5cdba8b263973e20800000000000000
+      internalID: 3330292501678120028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_46
+      name: JumpSprites_46
       rect:
         serializedVersion: 2
-        x: 414
-        y: 115
+        x: 408
+        y: 80
         width: 32
         height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef0682585f57efd60800000000000000
-      internalID: 7925902091580104958
+      spriteID: b73086fa1a0d5f410800000000000000
+      internalID: 1510342642903810939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_47
+      name: JumpSprites_47
       rect:
         serializedVersion: 2
-        x: 470
-        y: 115
+        x: 464
+        y: 80
         width: 32
         height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d7b39105e8993520800000000000000
-      internalID: 2682343162417231825
+      spriteID: 0090693a68c1b8640800000000000000
+      internalID: 5083187969013451008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_48
+      name: JumpSprites_48
       rect:
         serializedVersion: 2
-        x: 21
-        y: 35
+        x: 15
+        y: 0
         width: 33
         height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7728bf9d09793ae20800000000000000
-      internalID: 3360696395336745591
+      spriteID: ee30632d09e655b20800000000000000
+      internalID: 3122523484932408302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1 hunter_monk_56x80px_49
+      name: JumpSprites_49
       rect:
         serializedVersion: 2
-        x: 74
-        y: 35
+        x: 68
+        y: 0
         width: 36
         height: 19
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274503f37cbc08150800000000000000
-      internalID: 5872917970710189170
+      spriteID: bff79a428c3887780800000000000000
+      internalID: -8685046985752215557
       vertices: []
       indices: 
       edges: []
@@ -1293,7 +1293,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ae173e6f48a301e438bea60f935c7ed5
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

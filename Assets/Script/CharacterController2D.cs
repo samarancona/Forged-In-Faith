@@ -14,7 +14,7 @@ public class CharacterController2D : MonoBehaviour
 
 	
 
-	const float k_GroundedRadius = 0.6f;                      // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = 0.45f;                      // Radius of the overlap circle to determine if grounded
 	
 
 	[HideInInspector]public bool m_Grounded;            // Whether or not the player is grounded.
@@ -56,8 +56,10 @@ public class CharacterController2D : MonoBehaviour
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+		
 		for (int i = 0; i < colliders.Length; i++)
 		{
+			
 			if (colliders[i].gameObject != gameObject )
 			{
 				m_Grounded = true;

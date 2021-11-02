@@ -82,6 +82,14 @@ public class CharacterMouvement : MonoBehaviour
             item_World.DestroySelf();
         }
     }
+
+
+
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {   
@@ -94,8 +102,15 @@ public class CharacterMouvement : MonoBehaviour
         
         JumpingFunction();
         WallJumpingFunction();
+        CheckAnimation();
     }
     
+
+
+
+
+
+
     private void FixedUpdate()
     {
         //fixed fixis mouvement for wall jumping
@@ -115,7 +130,7 @@ public class CharacterMouvement : MonoBehaviour
 
         /////////////////////////////////////////
 
-        CheckAnimation();
+        
         if ((Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
             
@@ -154,15 +169,37 @@ public class CharacterMouvement : MonoBehaviour
         {
             m_Animator.SetBool("Run", false);
         }
-        
-        
-        //if (Controller2D.b_DoubleJump && !Controller2D.m_Grounded && Input.GetButton("Jump"))
-        //{
-                                                                                                      // se si vuole un'animazione di capovolta al doppio salto 
-        //    m_Animator.Play("Base Layer.DoubleJumpFlip", 0, 0f);
-        //}
 
-        
+
+
+        if (Input_JumpKeyDown && M_grounded == true)
+        {
+            m_Animator.SetBool("Jump", true);
+            
+        }
+        else if (M_grounded == true && s_rigidbody2D.velocity.y == 0)
+        {
+            m_Animator.SetBool("Jump", false);
+            Debug.Log("Setting Bool Anim");
+        }
+
+        //double jump
+        if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true)
+        {
+            m_Animator.SetBool("DoubleJump", true);
+            
+
+
+        }
+        else //if (M_grounded == true)
+        {
+            m_Animator.SetBool("DoubleJump", false);
+        }
+
+
+
+
+
     }
 
 
@@ -180,7 +217,7 @@ public class CharacterMouvement : MonoBehaviour
         if (Input_JumpKeyDown && M_grounded == true)
         {
 
-            Debug.Log("ho saltato");
+            
             
 
             IsJumping = true;
@@ -337,8 +374,9 @@ public class CharacterMouvement : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-       
+        Gizmos.color = Color.red;
         Gizmos.DrawSphere(FrontCheck.position, 0.4f) ;
-        Gizmos.DrawSphere(Controller2D.m_GroundCheck.position, 0.6f);
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(Controller2D.m_GroundCheck.position, 0.45f);
     }
 }

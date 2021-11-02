@@ -26,7 +26,6 @@ public class Item_World : MonoBehaviour
 
             //imposto tipo Item
             this.item = new Item { itemType = Item.Itemtype.HealthPosion, Amount = 1 };
-            Debug.Log(item.itemType);
             SRenderer.sprite = item_Assets.HealthPosionSprite; 
            
             //item.GetSprite();
@@ -41,7 +40,6 @@ public class Item_World : MonoBehaviour
 
             //imposto tipo Item
             this.item = new Item { itemType = Item.Itemtype.coin, Amount = 1 };
-            Debug.Log(item.itemType);
             SRenderer.sprite = item_Assets.CoinSprite;
             //item.GetSprite();
             //item_World.SetItem(new Item { itemType = Item.Itemtype.coin, Amount = 1 });
@@ -54,7 +52,6 @@ public class Item_World : MonoBehaviour
 
             //imposto tipo Item
             this.item = new Item { itemType = Item.Itemtype.medkit, Amount = 1 };
-            Debug.Log(item.itemType);
             SRenderer.sprite = item_Assets.Medkit;
             //item.GetSprite();
             //item_World.SetItem(new Item { itemType = Item.Itemtype.medkit, Amount = 1 });
@@ -66,7 +63,7 @@ public class Item_World : MonoBehaviour
     public void SetItem(Item item)
     {
         this.item = item;
-        Debug.Log(item.itemType);
+        
         SRenderer.sprite = item.GetSprite();
     }
     public Item GetItem()
