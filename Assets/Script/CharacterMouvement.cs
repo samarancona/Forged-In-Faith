@@ -11,8 +11,15 @@ public class CharacterMouvement : MonoBehaviour
 
 
     [Header("For Mouvement")]
+    [SerializeField] private float FallMultiplayer = 0f;
     [SerializeField] public float Speed = 40f;
     private float HorizontalMove = 0f;
+    private float FallVelocity;
+
+
+
+
+
 
     [Header("For Jumping")]
     [SerializeField] public bool b_Doublejump_key = false;
@@ -20,12 +27,15 @@ public class CharacterMouvement : MonoBehaviour
     [SerializeField] float DoubleJumpForce = 0f;
     [SerializeField] public float JumpTime = 0.35f;
     [SerializeField] public float JumpForce = 0f;
-    [SerializeField] float FallMultiplayer = 0f;
     private bool b_Doublejump = false;
     private bool IsJumping;
     private float CounterJump;
     private bool M_grounded;
     private bool Input_JumpKeyDown = false;
+
+
+
+
 
     [Header("For Wall Jumping")]
     public bool wallJumpingKey = false;
@@ -35,11 +45,20 @@ public class CharacterMouvement : MonoBehaviour
     public float xWallForce;
     public float yWallForce;
     public float WallJumpTime;
-    public float WallJumpDirection = -1f;
+    private float WallJumpDirection = -1f;
     private bool isToucingFront;
     const float k_FrontCheckRadius = 0.4f;                     // Radius of the overlap circle to determine if there is something in front
-    bool WallJumping;
-    bool WallSliding;
+    private bool WallJumping;
+    private bool WallSliding;
+
+
+    [Header("For Gliding")]
+    [SerializeField] private GameObject AliPlaceHolder;
+    [SerializeField] private float FallGlideVelocity = -4;
+    [SerializeField] public float GlideTime = 0.5f;
+    private bool b_CanGlide = false;
+    private float CounterGlide = 0.5f;
+
 
 
 
@@ -56,7 +75,7 @@ public class CharacterMouvement : MonoBehaviour
 
     private void Start()
     {
-        
+        FallVelocity = FallMultiplayer;
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
         M_grounded = Controller2D.m_Grounded;
@@ -92,16 +111,31 @@ public class CharacterMouvement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        OverlappingFunction();
-        SetWallJumpDirection();
-        
+    {
         M_grounded = Controller2D.m_Grounded;
         HorizontalMove = Input.GetAxisRaw("Horizontal");
         Input_JumpKeyDown = Input.GetButtonDown("Jump");
+
+
+
+        OverlappingFunction();
+
+
         
+
+        
+
+
         JumpingFunction();
+
+
         WallJumpingFunction();
+
+
+        GlidingFunction(b_Doublejump);
+
+
+
         CheckAnimation();
     }
     
@@ -113,6 +147,11 @@ public class CharacterMouvement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ControllFallVelocity();
+
+
+        SetWallJumpDirection();
+
         //fixed fixis mouvement for wall jumping
         if (WallSliding)
         {
@@ -120,12 +159,18 @@ public class CharacterMouvement : MonoBehaviour
             s_rigidbody2D.velocity = new Vector2(s_rigidbody2D.velocity.x, Mathf.Clamp(s_rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue));////0f
 
         }
-        else if (WallSliding == false)
+        /*else if (WallSliding == false)
         {
             s_rigidbody2D.gravityScale = 5f;
         }
+        */
+
+        if (WallJumping == true && wallJumpingKey == true)
+        {
+            MakeWallJump(); //forse da fare in cooroutine
+        }
+
         
-        MakeWallJump(); //forse da fare in cooroutine
         
 
         /////////////////////////////////////////
@@ -160,7 +205,7 @@ public class CharacterMouvement : MonoBehaviour
     {
         
         
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        if (HorizontalMove < 0 || HorizontalMove > 0)
         {
             m_Animator.SetBool("Run", true);
 
@@ -177,14 +222,14 @@ public class CharacterMouvement : MonoBehaviour
             m_Animator.SetBool("Jump", true);
             
         }
-        else if (M_grounded == true && s_rigidbody2D.velocity.y == 0)
+        if (M_grounded == true || s_rigidbody2D.velocity.y <= 0)
         {
             m_Animator.SetBool("Jump", false);
-            Debug.Log("Setting Bool Anim");
+            
         }
 
         //double jump
-        if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true)
+        if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true && b_Doublejump == true)
         {
             m_Animator.SetBool("DoubleJump", true);
             
@@ -224,7 +269,7 @@ public class CharacterMouvement : MonoBehaviour
             CounterJump = JumpTime;
             s_rigidbody2D.velocity = Vector2.up * JumpForce;
             b_Doublejump = true;
-                                                                 //Controller2D.m_JumpForce = 600f;
+            //Controller2D.m_JumpForce = 600f;
         }
         //double jump
         if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true)
@@ -236,6 +281,7 @@ public class CharacterMouvement : MonoBehaviour
                 s_rigidbody2D.velocity = Vector2.zero;                               // azzero la velocità verticale in modo da avere un salto con il valore non mutato
                 s_rigidbody2D.velocity += Vector2.up * DoubleJumpForce;              //(-1 * Physics2D.gravity.y) * 1.5f;
                 b_Doublejump = false;
+                b_CanGlide = true;
                 Debug.Log("doppio salto");
             }
 
@@ -273,20 +319,68 @@ public class CharacterMouvement : MonoBehaviour
             IsJumping = false;
         }
 
+        
+
+    }
+
+
+
+    private void ControllFallVelocity()
+    {
         if (s_rigidbody2D.velocity.y < 0)
         {
-            s_rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplayer - 1) * Time.deltaTime;
+            s_rigidbody2D.velocity = Vector2.up  * (s_rigidbody2D.velocity.y + Physics2D.gravity.y) / FallMultiplayer ;//* Time.deltaTime
+            Debug.Log(s_rigidbody2D.velocity);
+        }
+    }
+
+
+
+    
+
+    private void GlidingFunction(bool doublejump)
+    {
+        //se premo il tengo il tasto premuto per glidare e ho fatto il doppio salto e sono in aria e in fine se posso effetivamente glidare allora dopo un certo tempo di pressione Voilà
+        if (Input.GetButton("Jump") && !M_grounded && b_CanGlide)
+        {
+
+            CounterGlide -= Time.deltaTime;
+            
+
+
+            //timer Counter glide
+            if(CounterGlide <= 0)
+            {
+                
+                AliPlaceHolder.SetActive(true);
+                FallMultiplayer = FallGlideVelocity;
+                Debug.Log("Sto glidando di brutto-----");
+                
+            }
         }
 
+        //se smetto di tenere premuto il tasto per glidare allora disattivo variabili e oggetti riferiti al gliding
+        if (Input.GetButtonUp("Jump") || M_grounded)
+        {
+            b_CanGlide = false;
+            FallMultiplayer = FallVelocity;
+            AliPlaceHolder.SetActive(false);
+            CounterGlide = GlideTime;
+        }
     }
 
 
 
 
 
+    //Function That makes all the overlapping functions
+    void OverlappingFunction()
+    {
+        isToucingFront = Physics2D.OverlapCircle(FrontCheck.position, k_FrontCheckRadius, wallJumpLayer);
+    }
 
 
-    //Function Called in update for setting All booleans Variables for Jumping or Sliding 
+//Function Called in update for setting All booleans Variables for Jumping or Sliding 
     private void WallJumpingFunction()
     {
         //JumpingWall Function
@@ -311,21 +405,6 @@ public class CharacterMouvement : MonoBehaviour
 
         //JumpingWallFunction end
     }
-
-
-
-
-
-
-
-    //Function That makes all the overlapping functions
-    void OverlappingFunction()
-    {
-        isToucingFront = Physics2D.OverlapCircle(FrontCheck.position, k_FrontCheckRadius, wallJumpLayer);
-    }
-
-
-
 
 
 
@@ -363,15 +442,27 @@ public class CharacterMouvement : MonoBehaviour
     // Function that make the wall Jump(maybe better in cooroutine)
     void MakeWallJump()
     {
-        if (WallJumping == true && wallJumpingKey == true)
-        {
-
-            s_rigidbody2D.velocity = new Vector2(xWallForce * -WallJumpDirection, yWallForce);
-            s_rigidbody2D.gravityScale = 5f;
-
-
-        }
+        
+        s_rigidbody2D.velocity = new Vector2(xWallForce * -WallJumpDirection, yWallForce);
+        //s_rigidbody2D.gravityScale = 5f;
+        
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
