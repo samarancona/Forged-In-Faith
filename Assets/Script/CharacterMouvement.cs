@@ -12,9 +12,10 @@ public class CharacterMouvement : MonoBehaviour
 
     [Header("For Mouvement")]
     [SerializeField] private float FallMultiplayer = 0f;
-    [SerializeField] public float Speed = 40f;
+    [SerializeField] public float Speed;
+    private float OriginalSpeed;
     private float HorizontalMove = 0f;
-    private float FallVelocity;
+    private float OriginalFallVelocity;
 
 
 
@@ -38,6 +39,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
     [Header("For Wall Jumping")]
+    [SerializeField] private float FallWJVelocity;
     public bool wallJumpingKey = false;
     public Transform FrontCheck;
     public float WallSlidingSpeed = 0;
@@ -52,9 +54,11 @@ public class CharacterMouvement : MonoBehaviour
     private bool WallSliding;
 
 
+
+
     [Header("For Gliding")]
     [SerializeField] private GameObject AliPlaceHolder;
-    [SerializeField] private float FallGlideVelocity = -4;
+    [SerializeField] private float FallGlideVelocity;
     [SerializeField] public float GlideTime = 0.5f;
     private bool b_CanGlide = false;
     private float CounterGlide = 0.5f;
@@ -75,7 +79,8 @@ public class CharacterMouvement : MonoBehaviour
 
     private void Start()
     {
-        FallVelocity = FallMultiplayer;
+        OriginalSpeed = Speed;
+        OriginalFallVelocity = FallMultiplayer;
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
         M_grounded = Controller2D.m_Grounded;
@@ -121,20 +126,16 @@ public class CharacterMouvement : MonoBehaviour
         OverlappingFunction();
 
 
-        
-
-        
+       
 
 
         JumpingFunction();
 
 
-        WallJumpingFunction();
-
 
         GlidingFunction(b_Doublejump);
 
-
+        WallJumpingFunction();
 
         CheckAnimation();
     }
@@ -147,7 +148,9 @@ public class CharacterMouvement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ControllFallVelocity();
+        
+
+        FallVelocityFunction();
 
 
         SetWallJumpDirection();
@@ -217,7 +220,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
 
-        if (Input_JumpKeyDown && M_grounded == true)
+        if (IsJumping == true               /*Input_JumpKeyDown && M_grounded == true*/)
         {
             m_Animator.SetBool("Jump", true);
             
@@ -225,25 +228,8 @@ public class CharacterMouvement : MonoBehaviour
         if (M_grounded == true || s_rigidbody2D.velocity.y <= 0)
         {
             m_Animator.SetBool("Jump", false);
-            
+        
         }
-
-        //double jump
-        if (!M_grounded && Input_JumpKeyDown && b_Doublejump_key == true && b_Doublejump == true)
-        {
-            m_Animator.SetBool("DoubleJump", true);
-            
-
-
-        }
-        else //if (M_grounded == true)
-        {
-            m_Animator.SetBool("DoubleJump", false);
-        }
-
-
-
-
 
     }
 
@@ -325,12 +311,12 @@ public class CharacterMouvement : MonoBehaviour
 
 
 
-    private void ControllFallVelocity()
+    private void FallVelocityFunction()
     {
         if (s_rigidbody2D.velocity.y < 0)
         {
             s_rigidbody2D.velocity = Vector2.up  * (s_rigidbody2D.velocity.y + Physics2D.gravity.y) / FallMultiplayer ;//* Time.deltaTime
-            Debug.Log(s_rigidbody2D.velocity);
+            Debug.Log(s_rigidbody2D.velocity.y);
         }
     }
 
@@ -354,7 +340,7 @@ public class CharacterMouvement : MonoBehaviour
                 
                 AliPlaceHolder.SetActive(true);
                 FallMultiplayer = FallGlideVelocity;
-                Debug.Log("Sto glidando di brutto-----");
+                
                 
             }
         }
@@ -363,7 +349,7 @@ public class CharacterMouvement : MonoBehaviour
         if (Input.GetButtonUp("Jump") || M_grounded)
         {
             b_CanGlide = false;
-            FallMultiplayer = FallVelocity;
+            FallMultiplayer = OriginalFallVelocity;
             AliPlaceHolder.SetActive(false);
             CounterGlide = GlideTime;
         }
@@ -401,6 +387,11 @@ public class CharacterMouvement : MonoBehaviour
             WallJumping = true;
             Invoke("SetWallJumpingToFalse", WallJumpTime);
         }
+        if (M_grounded || s_rigidbody2D.velocity.y <= 0f)
+        {
+            FallMultiplayer = OriginalFallVelocity;
+            Speed = OriginalSpeed;
+        }
 
 
         //JumpingWallFunction end
@@ -414,6 +405,8 @@ public class CharacterMouvement : MonoBehaviour
     void SetWallJumpingToFalse()
     {
         WallJumping = false;
+        
+
     }
 
 
@@ -442,8 +435,10 @@ public class CharacterMouvement : MonoBehaviour
     // Function that make the wall Jump(maybe better in cooroutine)
     void MakeWallJump()
     {
-        
+        FallMultiplayer = FallWJVelocity;
+        Speed = 40f;
         s_rigidbody2D.velocity = new Vector2(xWallForce * -WallJumpDirection, yWallForce);
+        
         //s_rigidbody2D.gravityScale = 5f;
         
     }
