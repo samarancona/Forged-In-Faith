@@ -8,7 +8,7 @@ public class NotCollectableObjects_World : MonoBehaviour
     [SerializeField]public SpriteRenderer SRenderer;
     [SerializeField]private Sprite[] Sprites; 
     public CharacterMouvement characterMouvement;
-    public bool DoppioSalto , Scaling , SaltoCalibrato ;
+    public bool DoppioSalto , Scaling , SaltoCalibrato, Gliding;
     
 
 

@@ -57,6 +57,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
     [Header("For Gliding")]
+    [SerializeField]public bool GlidingKey = false;
     [SerializeField] private GameObject AliPlaceHolder;
     [SerializeField] private float FallGlideVelocity;
     [SerializeField] public float GlideTime = 0.5f;
@@ -132,8 +133,8 @@ public class CharacterMouvement : MonoBehaviour
         JumpingFunction();
 
 
-
-        GlidingFunction(b_Doublejump);
+        if (GlidingKey) { GlidingFunction(b_Doublejump); }
+        
 
         WallJumpingFunction();
 
