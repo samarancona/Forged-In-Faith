@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class CharacterMouvement : MonoBehaviour
 {
+    [Header("For Player")]
+    [SerializeField] public float HP_Player = 100f;
+    [SerializeField] public float EP_Player = 100f;
+    [SerializeField] public float ProgressBarPoints = 0f;
+    //private int PlayerDifferentForms = 5;
+
+
+
     [Header("Externals Variables")]
+    public GameObject TipGrab_UI;
     public CharacterController2D Controller2D;
     public UI_Inventory uiInventory;
     private Inventory inventory;
-
+    
 
     [Header("For Mouvement")]
     [SerializeField] private float FallMultiplayer = 0f;
@@ -39,7 +48,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
     [Header("For Wall Jumping")]
-    [SerializeField] private float FallWJVelocity;
+    public float FallWJVelocity;
     public bool wallJumpingKey = false;
     public Transform FrontCheck;
     public float WallSlidingSpeed = 0;
@@ -57,9 +66,9 @@ public class CharacterMouvement : MonoBehaviour
 
 
     [Header("For Gliding")]
-    [SerializeField]public bool GlidingKey = false;
-    [SerializeField] private GameObject AliPlaceHolder;
-    [SerializeField] private float FallGlideVelocity;
+    [SerializeField] public bool GlidingKey = false;
+    public GameObject AliPlaceHolder;
+    public float FallGlideVelocity;
     [SerializeField] public float GlideTime = 0.5f;
     private bool b_CanGlide = false;
     private float CounterGlide = 0.5f;
@@ -80,6 +89,8 @@ public class CharacterMouvement : MonoBehaviour
 
     private void Start()
     {
+        HP_Player = 100f;
+        
         OriginalSpeed = Speed;
         OriginalFallVelocity = FallMultiplayer;
         m_Animator = GetComponent<Animator>();
@@ -96,23 +107,32 @@ public class CharacterMouvement : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         Item_World item_World = collision.GetComponent<Item_World>();
-        if(item_World != null)
+        if (item_World != null)
         {
-            // toucing Item
-            inventory.AddItem(item_World.GetItem());
-            Debug.Log("preso!!!!!!!");
-            item_World.DestroySelf();
+            TipGrab_UI.SetActive(true);
+            // toucing Item and controll if press E
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                inventory.AddItem(item_World.GetItem());
+                Debug.Log("preso!!!!!!!");
+                item_World.DestroySelf();
+            }
         }
     }
 
 
 
-
-
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Item_World item_World = collision.GetComponent<Item_World>();
+        if (item_World != null)
+        {
+            TipGrab_UI.SetActive(false);
+        }
+    }
 
 
     // Update is called once per frame
@@ -123,21 +143,28 @@ public class CharacterMouvement : MonoBehaviour
         Input_JumpKeyDown = Input.GetButtonDown("Jump");
 
 
-
+        //chuamo ad ogni frame la funzione che controlla ad ogni frame se sto toccando l'oggetto (layer) giusto
         OverlappingFunction();
 
 
-       
-
-
+        //chiamo la funzione per impostare variabili salto
         JumpingFunction();
 
 
-        if (GlidingKey) { GlidingFunction(b_Doublejump); }
-        
 
+        //imposto ad ogni frame la direzione di wall jump
+        SetWallJumpDirection();
+
+        //--------------------------------------------------------//
+
+
+
+        //chiamo wall jumping (setto variabili che servono a elabprare info in fixed update )
         WallJumpingFunction();
 
+
+
+        //inutile commentare
         CheckAnimation();
     }
     
@@ -149,12 +176,22 @@ public class CharacterMouvement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        // CONTROLLO SE HO PRESO LA MECCANICKEY NEL MONDO PER poi chiamare la funzione di gliding
+        if (GlidingKey) { GlidingFunction(b_Doublejump); }
+
+        //-----------------------------------------------------//
+
+
+
+
+
+        //controllo la FALLVELOCITY
+        if (s_rigidbody2D.velocity.y < 0) { FallVelocityFunction(); }
+
+        //_--------------------------------------------------------//
+
         
-
-        FallVelocityFunction();
-
-
-        SetWallJumpDirection();
 
         //fixed fixis mouvement for wall jumping
         if (WallSliding)
@@ -314,11 +351,11 @@ public class CharacterMouvement : MonoBehaviour
 
     private void FallVelocityFunction()
     {
-        if (s_rigidbody2D.velocity.y < 0)
-        {
-            s_rigidbody2D.velocity = Vector2.up  * (s_rigidbody2D.velocity.y + Physics2D.gravity.y) / FallMultiplayer ;//* Time.deltaTime
-            Debug.Log(s_rigidbody2D.velocity.y);
-        }
+        
+        
+        s_rigidbody2D.velocity = Vector2.up  * (s_rigidbody2D.velocity.y + Physics2D.gravity.y) / FallMultiplayer ;//* Time.deltaTime
+        //Debug.Log(s_rigidbody2D.velocity.y);
+        
     }
 
 
@@ -341,6 +378,7 @@ public class CharacterMouvement : MonoBehaviour
                 
                 AliPlaceHolder.SetActive(true);
                 FallMultiplayer = FallGlideVelocity;
+                Debug.Log(FallMultiplayer);
                 
                 
             }

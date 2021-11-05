@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AssetsGameObject
+  - ItemWorld
   layers:
   - Default
   - TransparentFX

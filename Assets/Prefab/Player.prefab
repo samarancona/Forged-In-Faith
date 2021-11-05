@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1118158816}
   - component: {fileID: 1118158817}
   m_Layer: 0
-  m_Name: 1 hunter_monk_56x80px_0
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,6 +428,7 @@ MonoBehaviour:
   xWallForce: 150
   yWallForce: 15
   WallJumpTime: 0.15
+  GlidingKey: 0
   AliPlaceHolder: {fileID: 767499392}
   FallGlideVelocity: 5
   GlideTime: 0.5

@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager_script : MonoBehaviour
 {
     [Header("For the UI")]
-    [SerializeField]private GameObject UI_ItemContainer;
-    [SerializeField]private GameObject UI_BeckgroundInv;
+    public GameObject UI_ItemContainer;
+    public GameObject UI_BeckgroundInv;
     bool b_ItemContainer = false;
 
     private void Update()

@@ -101,10 +101,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 27c9fbd44e3e3024488913d15776dc9d, type: 3}
   - {fileID: 21300000, guid: 0198226d79b29eb4bae4a62d41f19cce, type: 3}
   - {fileID: 21300000, guid: 31257a4562f54ff4298de63f6f661510, type: 3}
+  - {fileID: 21300000, guid: 9c27db502a515e4428d9d37aec70a311, type: 3}
   characterMouvement: {fileID: 0}
   DoppioSalto: 1
   Scaling: 0
   SaltoCalibrato: 0
+  Gliding: 0
 --- !u!61 &1123498112125403070
 BoxCollider2D:
   m_ObjectHideFlags: 0

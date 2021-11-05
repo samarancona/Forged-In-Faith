@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7524396071691740108}
   m_Layer: 0
   m_Name: pf_ItemWorld
-  m_TagString: Untagged
+  m_TagString: ItemWorld
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

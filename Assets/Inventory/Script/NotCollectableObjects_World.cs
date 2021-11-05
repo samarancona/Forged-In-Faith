@@ -6,7 +6,7 @@ public class NotCollectableObjects_World : MonoBehaviour
 {
     [Header("Sprite For Key To Unlock")]
     [SerializeField]public SpriteRenderer SRenderer;
-    [SerializeField]private Sprite[] Sprites; 
+    public Sprite[] Sprites; 
     public CharacterMouvement characterMouvement;
     public bool DoppioSalto , Scaling , SaltoCalibrato, Gliding;
     
@@ -27,6 +27,10 @@ public class NotCollectableObjects_World : MonoBehaviour
         {
             SRenderer.sprite = Sprites[2];
         }
+        if (Gliding == true)
+        {
+            SRenderer.sprite = Sprites[3];
+        }
 
 
     }
@@ -46,6 +50,11 @@ public class NotCollectableObjects_World : MonoBehaviour
         if (SaltoCalibrato == true && other.CompareTag("Player"))
         {
             characterMouvement.CalibratedJumping_Key = true;
+            Destroy(gameObject, 1f);
+        }
+        if(Gliding == true && other.CompareTag("Player"))
+        {
+            characterMouvement.GlidingKey = true;
             Destroy(gameObject, 1f);
         }
     }

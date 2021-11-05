@@ -12,8 +12,13 @@ public class Item_World : MonoBehaviour
     private Item item;
     public bool HealthPostion = false, coin= false, medkit= false;
 
+    [Header("For UI")]
+    private GameObject UITip;
+    
+
     private void Awake()
     {
+        UITip = GameObject.Find("TipsForGrabbing");
         item_Assets = GameObject.FindWithTag("AssetsGameObject").GetComponent<Item_Assets>();
         SRenderer = GetComponent<SpriteRenderer>();
         Item_World item_World = transform.GetComponent<Item_World>();
@@ -74,4 +79,16 @@ public class Item_World : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void ActiveTipElements()
+    {
+        UITip.SetActive(false);
+    }
+    /*private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            ActiveTipElements();
+        }
+    }*/
 }
