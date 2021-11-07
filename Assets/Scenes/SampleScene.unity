@@ -3411,7 +3411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299859333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.028106, y: -2.4828, z: -10.86}
+  m_LocalPosition: {x: -9.000723, y: -2.4828, z: -10.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1830462171}
@@ -5805,13 +5805,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
+      propertyPath: Speed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
       propertyPath: TipGrab_UI
       value: 
       objectReference: {fileID: 954160927}
     - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
+      propertyPath: xWallForce
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
+      propertyPath: yWallForce
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
       propertyPath: uiInventory
       value: 
       objectReference: {fileID: 321420449}
+    - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
+      propertyPath: WallJumpTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118158817, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
+      propertyPath: FallWJVelocity
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 47689413532170966, guid: 7bee291dd3a3e094fa3189bbe18a68bc, type: 3}
       propertyPath: m_RootOrder
       value: 0
