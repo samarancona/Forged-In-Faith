@@ -25,4 +25,16 @@ public class Item {
 
         }
     }
+    public bool IsStackable()
+    {
+        switch (itemType)
+        {
+            default:
+            case Itemtype.coin:
+            case Itemtype.HealthPosion:
+                return true;
+            case Itemtype.medkit:
+                return false;
+        }
+    }
 }

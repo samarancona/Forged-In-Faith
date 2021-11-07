@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using CodeMonkey.Utils;
 
 public class UI_Inventory : MonoBehaviour
 {
@@ -60,10 +62,28 @@ public class UI_Inventory : MonoBehaviour
             
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTamplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
+
+            //itemSlotRectTransform.GetComponent<Button.>() 
+
+
+            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                inventory.UseItem(item);
+            };
+
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-            
+
+            TextMeshProUGUI uiText = itemSlotRectTransform.Find("Text_Amount").GetComponent<TextMeshProUGUI>();
+            if(item.Amount > 1)
+            {
+                uiText.SetText(item.Amount.ToString());
+            }
+            else
+            {
+                uiText.SetText("");
+            }
             x++;
             if (x > 4)
             {
@@ -71,5 +91,10 @@ public class UI_Inventory : MonoBehaviour
                 y--;
             }
         }
+
+
+
+
+        
     }
 }

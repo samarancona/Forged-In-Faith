@@ -8,11 +8,13 @@ public class CharacterMouvement : MonoBehaviour
     [SerializeField] public float HP_Player = 100f;
     [SerializeField] public float EP_Player = 100f;
     [SerializeField] public float ProgressBarPoints = 0f;
-    //private int PlayerDifferentForms = 5;
+    private Item_World m_ItemToPickUp;
+    
+   //private int PlayerDifferentForms = 5;
 
 
 
-    [Header("Externals Variables")]
+   [Header("Externals Variables")]
     public GameObject TipGrab_UI;
     public CharacterController2D Controller2D;
     public UI_Inventory uiInventory;
@@ -96,52 +98,48 @@ public class CharacterMouvement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         s_rigidbody2D = GetComponent<Rigidbody2D>();
         M_grounded = Controller2D.m_Grounded;
-        inventory = new Inventory();
+        inventory = new Inventory(UseItem);
         uiInventory.Set_inventory(inventory);
     }
 
 
-
-
-
-
-
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void UseItem(Item item)
     {
-        Item_World item_World = collision.GetComponent<Item_World>();
-        if (item_World != null)
+        switch (item.itemType) 
         {
-            TipGrab_UI.SetActive(true);
-            // toucing Item and controll if press E
-            if (Input.GetKeyDown(KeyCode.RightShift))
-            {
-                inventory.AddItem(item_World.GetItem());
-                Debug.Log("preso!!!!!!!");
-                item_World.DestroySelf();
-            }
+            case Item.Itemtype.HealthPosion:
+                Debug.Log("mi sto curando");
+                inventory.RemoveItem(new Item { itemType = Item.Itemtype.HealthPosion, Amount = 1 });
+                break;
+            case Item.Itemtype.medkit:
+                Debug.Log("mi sto super curando cazzo");
+                inventory.RemoveItem(new Item { itemType = Item.Itemtype.medkit, Amount = 1 });
+                break;
         }
+
     }
-
-
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Item_World item_World = collision.GetComponent<Item_World>();
-        if (item_World != null)
-        {
-            TipGrab_UI.SetActive(false);
-        }
-    }
-
 
     // Update is called once per frame
     void Update()
     {
+
         M_grounded = Controller2D.m_Grounded;
+
         HorizontalMove = Input.GetAxisRaw("Horizontal");
+
         Input_JumpKeyDown = Input.GetButtonDown("Jump");
 
+
+
+
+
+        //for Pick The Item
+        if(Input.GetKeyDown(KeyCode.E) && m_ItemToPickUp != null)
+        {
+            inventory.AddItem(m_ItemToPickUp.GetItem());
+            Debug.Log("preso!!!!!!!");
+            m_ItemToPickUp.DestroySelf();
+        }
 
         //chuamo ad ogni frame la funzione che controlla ad ogni frame se sto toccando l'oggetto (layer) giusto
         OverlappingFunction();
@@ -167,6 +165,37 @@ public class CharacterMouvement : MonoBehaviour
         //inutile commentare
         CheckAnimation();
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Item_World item_World = collision.GetComponent<Item_World>();
+        if (item_World != null)
+        {
+            TipGrab_UI.SetActive(true);
+            m_ItemToPickUp = item_World;
+            // toucing Item and controll if press E
+            
+            
+            
+        }
+    }
+    
+
+    
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Item_World item_World = collision.GetComponent<Item_World>();
+        if (item_World != null)
+        {
+            m_ItemToPickUp = null;
+            TipGrab_UI.SetActive(false);
+        }
+    }
+
+
+
     
 
 
