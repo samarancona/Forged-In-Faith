@@ -62,7 +62,7 @@ public class CharacterMouvement : MonoBehaviour
     public float WallJumpTime;
     private float WallJumpDirection = -1f;
     private bool isToucingFront;
-    const float k_FrontCheckRadius = 0.4f;                     // Radius of the overlap circle to determine if there is something in front
+    const float k_FrontCheckRadius = 0.3f;                     // Radius of the overlap circle to determine if there is something in front
     private bool WallJumping = false;
     private bool WallSliding;
 
@@ -154,22 +154,55 @@ public class CharacterMouvement : MonoBehaviour
 
         //imposto ad ogni frame la direzione di wall jump
         SetWallJumpDirection();
+        
+        //--------------------------------------------------------//
+
+        // FOR WALLJUMPING 
+        if (/*Input.GetKey(KeyCode.Space) &&*/ isToucingFront && !M_grounded)
+        {
+
+            WallSliding = true;
+            canMove = false;
+            b_Doublejump = false;
+
+
+        }
+        else
+        {
+
+            StartCoroutine(SettingFalseWallSliding());
+        }
+
+
+        if (WallSliding && !M_grounded && wallJumpingKey)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                WallJumping = true;
+
+
+
+                ////
+                canMove = true;
+            }
+            
+
+        }
+        else if (!WallSliding || M_grounded)
+        {
+            FallMultiplayer = OriginalFallVelocity;
+            Speed = OriginalSpeed;
+        }
 
         //--------------------------------------------------------//
-        if (Input.GetKey(KeyCode.Space))
-        {
-            CheckWallSliding();
 
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-
-        }
 
         //chiamo wall jumping (setto variabili che servono a elabprare info in fixed update )
-        WallJumpingFunction();
 
-        
+
+        //WallJumpingFunction();   //-------------------------------------------------------//
+
+
 
         //inutile commentare
         //CheckAnimation();
@@ -214,10 +247,12 @@ public class CharacterMouvement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isToucingFront)
+        {
+            // CONTROLLO SE HO PRESO LA MECCANICKEY NEL MONDO PER poi chiamare la funzione di gliding
+            if (GlidingKey) { GlidingFunction(b_Doublejump); }
 
-        // CONTROLLO SE HO PRESO LA MECCANICKEY NEL MONDO PER poi chiamare la funzione di gliding
-        if (GlidingKey) { GlidingFunction(b_Doublejump); }
-
+        }
         //-----------------------------------------------------//
 
 
@@ -235,17 +270,32 @@ public class CharacterMouvement : MonoBehaviour
         if (WallSliding)
         {
 
-            //s_rigidbody2D.gravityScale = 0f;
-            s_rigidbody2D.velocity = new Vector2(s_rigidbody2D.velocity.x, Mathf.Clamp(s_rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue));////0f
-
+            s_rigidbody2D.gravityScale = 0f;
+            s_rigidbody2D.velocity = new Vector2(s_rigidbody2D.velocity.x, s_rigidbody2D.velocity.y * WallSlidingSpeed /*Mathf.Clamp(s_rigidbody2D.velocity.y, -WallSlidingSpeed, float.MaxValue)*/);////0f
+            
         }
-        /*else if (WallSliding == false)
+        else 
         {
             s_rigidbody2D.gravityScale = 5f;
-        }
-        */
 
+        }
         
+
+        if (WallJumping)
+        {
+            FallMultiplayer = FallWJVelocity;
+            Speed = 50f;
+            Debug.Log("walljump!");
+            
+            s_rigidbody2D.velocity = new Vector2(xWallForce * WallJumpDirection, yWallForce);
+
+            
+            
+            
+            
+            StartCoroutine(WallJumpCoolDownJ());
+
+        }
 
 
 
@@ -271,9 +321,25 @@ public class CharacterMouvement : MonoBehaviour
 
     }
 
+    IEnumerator WallJumpCoolDownJ()
+    {
+        canMove = false;
 
 
+        yield return new WaitForSeconds(0.05f);
 
+        canMove = true;
+        WallJumping = false;
+
+
+    }
+
+    IEnumerator SettingFalseWallSliding()
+    {
+        yield return new WaitForSeconds(0.05f);
+        canMove = true;
+        WallSliding = false;
+    }
 
 
 
@@ -283,7 +349,7 @@ public class CharacterMouvement : MonoBehaviour
     //funcition that set the animation boolean/key Variables
     private void CheckAnimation()
     {
-        
+
         
         if (HorizontalMove < 0 || HorizontalMove > 0)
         {
@@ -297,12 +363,12 @@ public class CharacterMouvement : MonoBehaviour
 
 
 
-        if (IsJumping == true               /*Input_JumpKeyDown && M_grounded == true*/)
+        if (IsJumping == true               /*Input_JumpKeyDown && M_grounded == true*/ && !WallSliding)
         {
             m_Animator.SetBool("Jump", true);
             
         }
-        if (M_grounded == true || s_rigidbody2D.velocity.y <= 0)
+        else
         {
             m_Animator.SetBool("Jump", false);
         
@@ -492,7 +558,7 @@ public class CharacterMouvement : MonoBehaviour
             //}
 
         }
-        else if(!isToucingFront && M_grounded && s_rigidbody2D.velocity.y > 0)
+        else if(!isToucingFront || M_grounded || s_rigidbody2D.velocity.y > 0)
         {
             canMove = true;
             WallSliding = false;
@@ -518,7 +584,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
     //setting waLL jump direction in base at the Horizontal input
-    void SetWallJumpDirection()
+    private void SetWallJumpDirection()
     {
         if(HorizontalMove < 0 )
         {
@@ -528,6 +594,10 @@ public class CharacterMouvement : MonoBehaviour
         {
             WallJumpDirection = 1;
         }
+        //if(HorizontalMove == 0)
+        //{
+        //    WallJumpDirection = -1;
+        //}
         
     }
     
@@ -536,7 +606,7 @@ public class CharacterMouvement : MonoBehaviour
 
 
     // Function that make the wall Jump(maybe better in cooroutine)
-    void MakeWallJump()
+    private void MakeWallJump()
     {
         if (!M_grounded && WallSliding)
         {
@@ -544,7 +614,7 @@ public class CharacterMouvement : MonoBehaviour
             {
                 FallMultiplayer = FallWJVelocity;
                 Speed = 50f;
-                s_rigidbody2D.velocity = new Vector2(-xWallForce * WallJumpDirection, yWallForce);
+                s_rigidbody2D.velocity = new Vector2(xWallForce * -WallJumpDirection, yWallForce);
                 Debug.Log("walljump!");
                 StartCoroutine(WallJumpCoolDownJ());
 
@@ -561,16 +631,7 @@ public class CharacterMouvement : MonoBehaviour
 
     }
 
-    IEnumerator WallJumpCoolDownJ()
-    {
-        canMove = false;
-        
-        yield return new WaitForSeconds(0.25f);
 
-        canMove = true;
-
-        
-    }
 
 
 
@@ -588,7 +649,7 @@ public class CharacterMouvement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(FrontCheck.position, 0.4f) ;
+        Gizmos.DrawSphere(FrontCheck.position, k_FrontCheckRadius) ;
         Gizmos.color = Color.white;
         Gizmos.DrawSphere(Controller2D.m_GroundCheck.position, 0.45f);
     }
